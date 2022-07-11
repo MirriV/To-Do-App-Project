@@ -1,0 +1,7 @@
+body{
+    background-color: hotpink;
+}
+.myList{
+    display:flex;
+    justify-content: center;
+}
