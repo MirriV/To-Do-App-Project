@@ -1,7 +1,24 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 body{
     background-color: hotpink;
 }
 .myList{
     display:flex;
     justify-content: center;
+}
+.listofToDos li{
+    list-style: none;
+    height:45px;
+    line-height: 45px;
+    position:relative;
+    background: pink;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    padding:0 15px;
 }
