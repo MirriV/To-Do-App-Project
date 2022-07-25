@@ -12,6 +12,13 @@ body{
     display:flex;
     justify-content: center;
 }
+
+.taskList{
+    display:flex;
+    justify-content: center; 
+}
+
+
 .listofToDos li{
     list-style: none;
     height:45px;
