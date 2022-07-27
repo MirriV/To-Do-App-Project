@@ -4,7 +4,7 @@ let addToDoButton= document.getElementById('addItem');
 let toDoContainer = document.getElementById('toDoContainer');
 let inputField = document.getElementById('inputField');
 
-let editButton=document.getElementById('editButton');
+
 let deleteButton=document.getElementById('deleteButton');
 
 addToDoButton.addEventListener('click',function(){
@@ -13,6 +13,5 @@ addToDoButton.addEventListener('click',function(){
     toDoContainer.appendChild(paragraph);
     inputField.value=""; //clear input field after adding new task
 
-  
-
 })
+
