@@ -7,7 +7,55 @@
 
 body{
     background-color: hotpink;
+    font-family:Arial, Helvetica, sans-serif;
+    min-height: 100vh;
 }
+
+header{
+    font-size:1.5rem;
+    min-height: 20vh;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+form{
+    min-height: 20vh;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+header , form {
+    min-height: 20vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input, form button{
+    padding:0.5rem;
+    font-size: 2rem;
+    border: none;
+    background: lightpink;
+
+}
+
+form button{
+    color: lightsalmon;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+form button:hover{
+    background: lightsalmon;
+    color: white;
+    
+}
+
+
 .myList{
     display:flex;
     justify-content: center;
