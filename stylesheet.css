@@ -52,8 +52,21 @@ form button{
 form button:hover{
     background: lightsalmon;
     color: white;
-    
+
 }
+
+.todo-item {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+/*moving to do item and buttons to the center*/
+.todo {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 .myList{

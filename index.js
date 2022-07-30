@@ -1,10 +1,10 @@
 //Create a new list item when clicking on new task
 //Selectors
 let todoInput = document.querySelector('.todo-input');
-let todoButton = document.querySelector('.todo-button');
-let todoList = document.querySelector('todo-input');
+let addtodoButton = document.querySelector('.todo-button');
+let todoList = document.querySelector('.todo-list');
 
-let toDoContainer = document.getElementById('toDoContainer');
+let toDoContainer = document.getElementById('.todo-container');
 
 //Event Listeners
 addtodoButton.addEventListener('click', addTodo);
@@ -31,7 +31,7 @@ function addTodo(event) {
     //Delete button
     const trashButton = document.createElement('button');
     trashButton.innerHTML = '<i class="fas fa-trash"></i>';
-    trashButton.classList.add("complete-btn");
+    trashButton.classList.add("trash-btn");
     todoDiv.appendChild(trashButton);
 
     //append to list(attaching to actual UL)
