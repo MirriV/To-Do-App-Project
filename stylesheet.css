@@ -61,11 +61,36 @@ form button:hover{
     align-items: center;
 }
 /*moving to do item and buttons to the center*/
-.todo {
+
+.todo{
     display:flex;
     justify-content: center;
     align-items: center;
+    background: white;
+    font-size: 1.5rem;
+    margin: 0.5rem;
 }
+
+.todo-container{
+    display:flex;
+    justify-content: center;
+
+}
+
+.todo-list{
+    min-width:30%;
+
+}
+/*move buttons to far right*/
+.todo li{
+    flex:1;
+
+}
+
+.completed{
+    text-decoration: line-through;
+}
+
 
 
 
