@@ -7,9 +7,10 @@ let todoList = document.querySelector('.todo-list');
 let toDoContainer = document.getElementById('.todo-container');
 
 //Event Listeners
-addtodoButton.addEventListener('click', addTodo);
-todoList.addEventListener('click', deleteCheck);
-todoList.addEventListener('click', completed);
+document.addEventListener("DOMContentLoaded", getTodos);
+addtodoButton.addEventListener("click", addTodo);
+todoList.addEventListener("click", deleteCheck);
+/*todoList.addEventListener('click', completed);*/
 
 
 
@@ -19,24 +20,30 @@ function addTodo(event) {
     //Prevent form from refreshing/submitting
     event.preventDefault();
     //Todo Div to which buttons are appended
-    const todoDiv = document.createElement('div');
-    todoDiv.classList.add('todo');
+    const todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo");
 
     //Create LI
-    const newTodo = document.createElement('li');
+    const newTodo = document.createElement("li");
     newTodo.innerText = todoInput.value;
-    newTodo.classList.add('todo-item');
+    newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
+
+    //add to locat storage
+    saveLocalTodos(todoInput.value);
+
     //checked button
-    const completedButton = document.createElement('button');
+    const completedButton = document.createElement("button");
     completedButton.innerHTML = '<i class="fas fa-check"></i>';
     completedButton.classList.add("complete-btn");
     todoDiv.appendChild(completedButton);
     //Delete button
-    const trashButton = document.createElement('button');
+    const trashButton = document.createElement("button");
     trashButton.innerHTML = '<i class="fas fa-trash"></i>';
     trashButton.classList.add("trash-btn");
     todoDiv.appendChild(trashButton);
+
+ 
 
     //append to list(attaching to actual UL)
     todoList.appendChild(todoDiv);
@@ -60,16 +67,54 @@ function deleteCheck(e) {
     }
 }
 
+//SAVE LOCAL TODOS 1
+function saveLocalTodos(todo) {
+    //check are these todo already saved?
+    let todos;
+    if (localStorage.getItem("todos") === null) {
+        todos = [];
+    } else {
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+    todos.push(todo);
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
 
+function getTodos(){
+    
+    let todos;
+    if (localStorage.getItem("todos") === null) {
+        todos = [];
+    } else {
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+    todos.forEach(function(todo){
+        const todoDiv = document.createElement("div");
+        todoDiv.classList.add("todo");
+    
+        //Create LI
+        const newTodo = document.createElement("li");
+        newTodo.innerText = todo;
+        newTodo.classList.add("todo-item");
+        todoDiv.appendChild(newTodo);
+    
+     
+    
+        //checked button
+        const completedButton = document.createElement("button");
+        completedButton.innerHTML = '<i class="fas fa-check"></i>';
+        completedButton.classList.add("complete-btn");
+        todoDiv.appendChild(completedButton);
+        //Delete button
+        const trashButton = document.createElement("button");
+        trashButton.innerHTML = '<i class="fas fa-trash"></i>';
+        trashButton.classList.add("trash-btn");
+        todoDiv.appendChild(trashButton);
+    
+     
+    
+        //append to list(attaching to actual UL)
+        todoList.appendChild(todoDiv);
 
-
-
-
-
-/*addToDoButton.addEventListener('click',function(){
-    var paragraph = document.createElement('p')
-    paragraph.innerText=inputField.value;
-    toDoContainer.appendChild(paragraph);
-    inputField.value=""; //clear input field after adding new task
-
-})*/
+    });
+}
