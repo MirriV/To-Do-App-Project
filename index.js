@@ -118,3 +118,9 @@ function getTodos(){
 
     });
 }
+//SORT ALPHABETICALLY
+ function Alphabetsort(string){
+    var x= string.split("");
+    return x.sort().join("");
+ }
+ console.log(Alphabetsort("todo-list"));
