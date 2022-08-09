@@ -4,12 +4,16 @@ let todoInput = document.querySelector('.todo-input');
 let addtodoButton = document.querySelector('.todo-button');
 let todoList = document.querySelector('.todo-list');
 
-let toDoContainer = document.getElementById('.todo-container');
+
+
+
 
 //Event Listeners
 document.addEventListener("DOMContentLoaded", getTodos);
 addtodoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteCheck);
+
+
 /*todoList.addEventListener('click', completed);*/
 
 
@@ -43,7 +47,7 @@ function addTodo(event) {
     trashButton.classList.add("trash-btn");
     todoDiv.appendChild(trashButton);
 
- 
+
 
     //append to list(attaching to actual UL)
     todoList.appendChild(todoDiv);
@@ -80,26 +84,26 @@ function saveLocalTodos(todo) {
     localStorage.setItem("todos", JSON.stringify(todos));
 }
 
-function getTodos(){
-    
+function getTodos() {
+
     let todos;
     if (localStorage.getItem("todos") === null) {
         todos = [];
     } else {
         todos = JSON.parse(localStorage.getItem("todos"));
     }
-    todos.forEach(function(todo){
+    todos.forEach(function (todo) {
         const todoDiv = document.createElement("div");
         todoDiv.classList.add("todo");
-    
+
         //Create LI
         const newTodo = document.createElement("li");
         newTodo.innerText = todo;
         newTodo.classList.add("todo-item");
         todoDiv.appendChild(newTodo);
-    
-     
-    
+
+
+
         //checked button
         const completedButton = document.createElement("button");
         completedButton.innerHTML = '<i class="fas fa-check"></i>';
@@ -110,17 +114,39 @@ function getTodos(){
         trashButton.innerHTML = '<i class="fas fa-trash"></i>';
         trashButton.classList.add("trash-btn");
         todoDiv.appendChild(trashButton);
-    
-     
-    
+
+
+
         //append to list(attaching to actual UL)
         todoList.appendChild(todoDiv);
 
     });
 }
-//SORT ALPHABETICALLY
- function Alphabetsort(string){
-    var x= string.split("");
+/*SORT ALPHABETICALLY
+function Alphabetsort(string) {
+    var x = string.split("");
     return x.sort().join("");
- }
- console.log(Alphabetsort("todo-list")); /*how to access list of to-do's after they're added and insert them here to be sorted?*/
+}
+console.log(Alphabetsort("todo-list")); */
+
+function sortList(){
+    onclick="sortList()";
+    var list, i , switching, listitems, shouldSwitch;
+    list = document.getElementById('todo-list');
+    switching= true;
+
+    while (switching) {
+        switching=false;
+        listitems =list.getElementsByTagName("li");
+
+        for (i=0 ;i<(listitems.lenght-1); i++){
+            shouldSwitch =false;
+            if(listitems[i].innerHTML.toLowerCase()>listitems[i+1].innerHTML.toLowerCase)
+            shouldSwitch=true;
+            break;
+
+        }
+    }
+    listitems[i].parentNode.insertBefore(listitems[i+1], listitems[i]);
+    switching =true;
+}

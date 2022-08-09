@@ -1,47 +1,49 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
+body {
     background-color: hotpink;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
 }
 
-header{
-    font-size:1.5rem;
+header {
+    font-size: 1.5rem;
     min-height: 20vh;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-}
-
-form{
-    min-height: 20vh;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-}
-
-header , form {
-    min-height: 20vh;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-form input, form button{
-    padding:0.5rem;
+form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header,
+form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input,
+form button {
+    padding: 0.5rem;
     font-size: 2rem;
     border: none;
     background: lightpink;
 
 }
 
-form button{
+form button {
     color: lightsalmon;
     background: white;
     cursor: pointer;
@@ -49,21 +51,22 @@ form button{
 
 }
 
-form button:hover{
+form button:hover {
     background: lightsalmon;
     color: white;
 
 }
 
 .todo-item {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
+
 /*moving to do item and buttons to the center*/
 
-.todo{
-    display:flex;
+.todo {
+    display: flex;
     justify-content: center;
     align-items: center;
     background: white;
@@ -71,52 +74,53 @@ form button:hover{
     margin: 0.5rem;
 }
 
-.todo-container{
-    display:flex;
+.todo-container {
+    display: flex;
     justify-content: center;
 
 }
 
-.todo-list{
-    min-width:30%;
+.todo-list {
+    min-width: 30%;
 
 }
+
 /*move buttons to far right*/
-.todo li{
-    flex:1;
+.todo li {
+    flex: 1;
 
 }
 
-.completed{
+.completed {
     text-decoration: line-through;
 }
 
 
 
 
-.myList{
-    display:flex;
+.myList {
+    display: flex;
     justify-content: center;
 }
 
-.taskList{
-    display:flex;
-    justify-content: center; 
+.taskList {
+    display: flex;
+    justify-content: center;
 }
 
-.actions{
-    display:flex;
-    justify-content: center;   
+.actions {
+    display: flex;
+    justify-content: center;
 }
 
 
-.listofToDos li{
+.listofToDos li {
     list-style: none;
-    height:45px;
+    height: 45px;
     line-height: 45px;
-    position:relative;
+    position: relative;
     background: pink;
     border-radius: 3px;
     margin-bottom: 8px;
-    padding:0 15px;
+    padding: 0 15px;
 }

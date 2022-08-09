@@ -1,40 +1,11 @@
-# To-Do-App-Project
-/*//////////////////////////////////////////////////////////////////*/
-//TO GET TODOS TO SHOW ON PAGE
-function getTodos() {
-    
-    let todos;
-    if (localStorage.getItem("todos") === null) {
-        todos = [];
-    } else {
-        todos = JSON.parse(localStorage.getItem("todos"));
-    }
-    todos.forEach(function (todo) {
-        //COPIED FROM ABOVE
-        const todoDiv = document.createElement("div");
-        todoDiv.classList.add("todo");
+TO DO LIST APP
 
-        //Create LI
-        const newTodo = document.createElement("li");
-        newTodo.innerText = todo;
-        newTodo.classList.add("todo-item");
-        todoDiv.appendChild(newTodo);
+The To Do List App is designed to help you keep track of all your tasks. 
 
-       
-        //checked button
-        const completedButton = document.createElement("button");
-        completedButton.innerHTML = '<i class="fas fa-check"></i>';
-        completedButton.classList.add("complete-btn");
-        todoDiv.appendChild(completedButton);
-        //Delete button
-        const trashButton = document.createElement("button");
-        trashButton.innerHTML = '<i class="fas fa-trash"></i>';
-        trashButton.classList.add("trash-btn");
-        todoDiv.appendChild(trashButton);
+Tasks are saved in one place and users are able to refer back to the list to decide what needs to be actioned next. This app was built with the use of HTML, CSS & Javascript.
 
-        todoList.appendChild(todoDiv);
+New task items can easily be added by pressing on the plus button and can easily be deleted again by clicking on the trash button. 
 
+Once a task has been completed, the user clicks the tick button and a line is drawn through the completed task so that users can easily differentiate between complete and incomplete tasks. 
 
-
-    });
-}
+This app is the final project of my Interactive Web Apps course being done through Codespace Academy. 
