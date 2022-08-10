@@ -95,32 +95,17 @@ form button:hover {
     text-decoration: line-through;
 }
 
-
-
-
-.myList {
-    display: flex;
-    justify-content: center;
+.complete-btn {
+    background: white;
+    color: lightsalmon;
+    border: 0;
+    padding: 0.5rem;
 }
 
-.taskList {
-    display: flex;
-    justify-content: center;
+.trash-btn {
+    background: white;
+    color: lightsalmon;
+    border: 0;  
+    padding: 0.5rem;
 }
 
-.actions {
-    display: flex;
-    justify-content: center;
-}
-
-
-.listofToDos li {
-    list-style: none;
-    height: 45px;
-    line-height: 45px;
-    position: relative;
-    background: pink;
-    border-radius: 3px;
-    margin-bottom: 8px;
-    padding: 0 15px;
-}

@@ -14,7 +14,29 @@ addtodoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteCheck);
 
 
-/*todoList.addEventListener('click', completed);*/
+/*Sort function*/
+
+function sortList(){
+    
+    var list, i , switching, listitems, shouldSwitch;
+    list = document.getElementById('todoSort');
+    switching= true;
+
+    while (switching) {
+        switching=false;
+        listitems =list.getElementsByTagName("li");
+
+        for (i=0 ;i<(listitems.lenght-1); i++){
+            shouldSwitch =false;
+            if(listitems[i].innerHTML.toLowerCase()>listitems[i+1].innerHTML.toLowerCase)
+            shouldSwitch=true;
+            break;
+
+        }
+    }
+    listitems[i].parentNode.insertBefore(listitems[i+1], listitems[i]);
+    switching =true;
+}
 
 
 
@@ -122,31 +144,4 @@ function getTodos() {
 
     });
 }
-/*SORT ALPHABETICALLY
-function Alphabetsort(string) {
-    var x = string.split("");
-    return x.sort().join("");
-}
-console.log(Alphabetsort("todo-list")); */
 
-function sortList(){
-    onclick="sortList()";
-    var list, i , switching, listitems, shouldSwitch;
-    list = document.getElementById('todo-list');
-    switching= true;
-
-    while (switching) {
-        switching=false;
-        listitems =list.getElementsByTagName("li");
-
-        for (i=0 ;i<(listitems.lenght-1); i++){
-            shouldSwitch =false;
-            if(listitems[i].innerHTML.toLowerCase()>listitems[i+1].innerHTML.toLowerCase)
-            shouldSwitch=true;
-            break;
-
-        }
-    }
-    listitems[i].parentNode.insertBefore(listitems[i+1], listitems[i]);
-    switching =true;
-}
