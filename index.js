@@ -145,3 +145,21 @@ function getTodos() {
     });
 }
 
+/* EDIT LIST ITEMS*/
+let todolistitem; // Element being edited
+
+let listActions = {
+  editItem: function() {
+    currentElement.innerHTML = currentElement.innerHTML.replace(currentElement.innerText, editInput.value);
+    editInput.value = '';
+  }
+}
+
+let modalControls = {
+  editModal: function(i)  {
+    // *i* is *this* in *modalControls.editModal(this)*
+    modalContainer.style.display = 'block';
+    currentElement = i.parentElement;
+    modalContainer.getElementsByTagName('input')[0].value = currentElement.innerText;
+  }
+}
