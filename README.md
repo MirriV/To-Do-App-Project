@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 TO DO LIST APP
 
 The To Do List App is designed to help you keep track of all your tasks. 
@@ -9,3 +10,6 @@ New task items can easily be added by pressing on the plus button and can easily
 Once a task has been completed, the user clicks the tick button and a line is drawn through the completed task so that users can easily differentiate between complete and incomplete tasks. 
 
 This app is the final project of my Interactive Web Apps course being done through Codespace Academy. 
+=======
+# To-Do-App-Project
+>>>>>>> 84b5722a0a91bff59f6527391662d742bdaaf2fd
